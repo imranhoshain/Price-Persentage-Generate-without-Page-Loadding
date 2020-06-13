@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Price Persentage Generate without Page Loadding</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6">
+				<h4 class="text-center">Price Persentage Generate</h4>
+				<hr />
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label class="control-label col-sm-6" for="value1">Enter you value</label>
+						<div class="col-sm-10">
+							<input type="number" name="value1" id="value1" class="form-control" min="0" placeholder="Enter first value" required />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-6" for="value2">Enter you value</label>
+						<div class="col-sm-10">
+							<input type="number" name="value2" id="value2" class="form-control" min="0" placeholder="Enter second value" required />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-6" for="sum">After 62%</label>
+						<div class="col-sm-10">
+							<input type="number" name="sum" id="sum" class="form-control" readonly />
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="col-sm-6">
+				<h4 class="text-center">Price Persentage Generate </h4>
+				<hr />
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label class="control-label col-sm-6" for="value3">Enter you value</label>
+						<div class="col-sm-10">
+							<input type="number" name="value3" id="value3" class="form-control" min="0" placeholder="Enter first value" required />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-6" for="value4">Enter you value</label>
+						<div class="col-sm-10">
+							<input type="number" name="value4" id="value4" class="form-control" min="0" placeholder="Enter second value" required />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-6" for="sum">After 47%</label>
+						<div class="col-sm-10">
+							<input type="number" name="sum1" id="sum1" class="form-control" readonly />
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script>
+	$(function() {
+		$('#value1, #value2').keyup(function() {
+			var value1 = parseFloat($('#value1').val()) || 0;
+			var value2 = parseFloat($('#value2').val()) || 0;
+			$('#sum').val(value1 * value2 / 100 + value1);
+		});
+	});
+	</script>
+	<script>
+	$(function() {
+		$('#value3, #value4').keyup(function() {
+			var value3 = parseFloat($('#value3').val()) || 0;
+			var value4 = parseFloat($('#value4').val()) || 0;
+			$('#sum1').val(value3 * value4 / 100 + value3);
+		});
+	});
+	</script>
+</body>
+</html>
